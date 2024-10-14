@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .cont {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  li.completed {
+    text-decoration: line-through;
+    color: grey;
+  }
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #45a049;
+  }
+  input[type="text"] {
+    width: 75%;
+    padding: 8px;
+    margin-top: 20px;
+  }

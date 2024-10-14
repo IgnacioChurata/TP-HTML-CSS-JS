@@ -1,0 +1,49 @@
+<!--3. Crear una lista de tareas donde el usuario pueda agregar tareas a su disposición 
+y que, cuando el usuario la complete pueda hacer click sobre dicha tarea para así mostrarse como tachada.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Punto-3.css">
+  <title>Lista de Tareas</title>
+</head>
+<body>
+  <div class="cont">
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="new-task" placeholder="Nueva tarea...">
+    <br><br>
+    <button class="btn" onclick="tareas()">Agregar tarea</button>
+    <ul id="task-list"></ul>
+  </div>
+
+  <script>
+    function tareas() {
+      let Input = document.getElementById('new-task');
+      let texto = Input.value.trim();
+      
+      if (texto === '') {
+        alert('Por favor, escribe una tarea.');
+        return;
+      }
+
+      let lista = document.getElementById('task-list');
+      let add = document.createElement('li');
+
+      add.innerHTML = `
+        ${texto}
+        <button onclick="toggleTask(this)" class="btn">✔</button>
+      `;
+      lista.appendChild(add);
+      Input.value = '';
+    }
+
+    function toggleTask(boton) {
+      let tarea = boton.parentElement;
+      tarea.classList.toggle('completed');
+    }
+  </script>
+</body>
+</html>
